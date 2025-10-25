@@ -1,0 +1,183 @@
+.hero {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+}
+
+/* Background Image */
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../assets/skincare.jpg') center/cover no-repeat;
+  filter: brightness(0.4); /* Slight dark overlay for text readability */
+  z-index: -3;
+}
+
+/* Wavy Moving Layer */
+.wavy-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 30vh; /* slightly smaller wave */
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(197, 129, 148, 0.5), rgba(250, 0, 83, 0.5));
+  clip-path: path("M0,100 C400,150 800,50 1200,100 C1600,150 2000,50 2400,100 L2400,0 L0,0 Z");
+  animation: moveWaves 20s linear infinite;
+}
+
+@keyframes moveWaves {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-50vw); }
+  100% { transform: translateX(0); }
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Hero Left */
+.hero-left h1 {
+  font-size: 60px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-shadow: 
+    2px 2px 0 rgba(255,255,255,0.5),
+    4px 4px 0 rgba(200,200,200,0.3),
+    6px 6px 0 rgba(150,150,150,0.2);
+  transform: perspective(500px) rotateX(2deg) rotateY(-1deg);
+}
+
+.hero-left .hero-main-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+.hero-left .hero-sub-text {
+  font-size: 16px;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #ec4899, #f99ec3);
+  color: white;
+}
+
+.btn.primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn.whatsapp {
+  background: linear-gradient(135deg, #22c55e, #7ee787);
+  color: white;
+}
+
+.btn.whatsapp img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Floating sparkles */
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  z-index: 0;
+  animation: sparkleMove 10s linear infinite;
+}
+
+@keyframes sparkleMove {
+  0% { transform: translate(0,0) scale(1) rotate(0deg); opacity: 0.8; }
+  25% { transform: translate(30px,-20px) scale(1.1) rotate(10deg); opacity: 1; }
+  50% { transform: translate(60px,-50px) scale(1.2) rotate(20deg); opacity: 0.9; }
+  75% { transform: translate(30px,-30px) scale(1.1) rotate(10deg); opacity: 1; }
+  100% { transform: translate(0,0) scale(1) rotate(0deg); opacity: 0.8; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .hero-left h1 { font-size: 48px; }
+  .hero-left .hero-main-text { font-size: 16px; }
+  .hero-left .hero-sub-text { font-size: 14px; }
+  .wavy-bg {
+    height: 30vh;
+    clip-path: path("M0,70 C300,120 700,40 1100,90 C1500,120 1900,40 2300,90 L2300,0 L0,0 Z");
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-left h1 { font-size: 40px; }
+  .hero-left .hero-main-text { font-size: 15px; }
+  .hero-left .hero-sub-text { font-size: 13px; }
+.wavy-bg {
+  width: 200%;
+    height: 20vh;
+    clip-path: path("M0,50 C200,80 550,25 900,70 C1300,80 1700,25 2100,70 L2100,0 L0,0 Z");
+    animation: moveWaves 20s linear infinite;
+  }
+ @keyframes moveWaves {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-50vw); }
+  100% { transform: translateX(0); }
+}
+}
+
+@media (max-width: 480px) {
+  .hero-left h1 { font-size: 32px; }
+  .hero-left .hero-main-text { font-size: 14px; }
+  .hero-left .hero-sub-text { font-size: 12px; }
+ .wavy-bg {
+  width: 200%;
+    height: 20vh;
+clip-path: path("M0,50 C200,120 400,0 600,80 C800,160 1000,20 1200,90 C1400,160 1600,30 1800,100 C2000,160 2100,40 2200,70 L2200,0 L0,0 Z");
+    animation: moveWaves 20s linear infinite;
+  }
+
+  @keyframes moveWaves {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-50vw); }
+  100% { transform: translateX(0); }
+}
+}
