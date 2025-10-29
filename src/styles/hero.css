@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: white;
+  color: #fffafc; /* soft white for text */
 }
 
 /* Background Image */
@@ -17,7 +17,7 @@
   width: 100vw;
   height: 100vh;
   background: url('../assets/skincare.jpg') center/cover no-repeat;
-  filter: brightness(0.4); /* Slight dark overlay for text readability */
+  filter: brightness(0.6); /* slightly darker for readability */
   z-index: -3;
 }
 
@@ -27,17 +27,11 @@
   top: 0;
   left: 0;
   width: 200%;
-  height: 30vh; /* slightly smaller wave */
+  height: 30vh;
   z-index: -2;
-  background: linear-gradient(180deg, rgba(197, 129, 148, 0.5), rgba(250, 0, 83, 0.5));
+  background: linear-gradient(180deg, rgba(240,142,180,0.6), rgba(183,200,248,0.6));
   clip-path: path("M0,100 C400,150 800,50 1200,100 C1600,150 2000,50 2400,100 L2400,0 L0,0 Z");
-  animation: moveWaves 20s linear infinite;
-}
-
-@keyframes moveWaves {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-50vw); }
-  100% { transform: translateX(0); }
+  animation: moveWaves 10s linear infinite;
 }
 
 /* Hero Content */
@@ -54,13 +48,12 @@
 .hero-left h1 {
   font-size: 60px;
   font-weight: 900;
-  color: #ffffff;
+  color: #f08eb4; /* rose glow */
   margin-bottom: 20px;
   letter-spacing: 1px;
   text-shadow: 
-    2px 2px 0 rgba(255,255,255,0.5),
-    4px 4px 0 rgba(200,200,200,0.3),
-    6px 6px 0 rgba(150,150,150,0.2);
+    0 0 10px rgba(240,142,180,0.7),
+    0 0 20px rgba(183,200,248,0.5);
   transform: perspective(500px) rotateX(2deg) rotateY(-1deg);
 }
 
@@ -68,13 +61,15 @@
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 15px;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  color: #b7c8f8; /* lavender-blue subtitle */
+  text-shadow: 0 0 6px rgba(183,200,248,0.4);
 }
 
 .hero-left .hero-sub-text {
   font-size: 16px;
   margin-bottom: 25px;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  color: #fffafc; /* soft white */
+  text-shadow: 0 0 5px rgba(255,255,255,0.4);
 }
 
 /* Buttons */
@@ -98,18 +93,18 @@
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #ec4899, #f99ec3);
-  color: white;
+  background: linear-gradient(135deg, #f08eb4, #b7c8f8); /* rose to lavender gradient */
+  color: #fffafc;
 }
 
 .btn.primary:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(240,142,180,0.5), 0 0 15px rgba(183,200,248,0.3);
 }
 
 .btn.whatsapp {
-  background: linear-gradient(135deg, #22c55e, #7ee787);
-  color: white;
+  background: linear-gradient(135deg, #22c55e, #7ee787); /* green accent for WhatsApp */
+  color: #fffafc;
 }
 
 .btn.whatsapp img {
@@ -117,23 +112,23 @@
   height: 20px;
 }
 
-/* Floating sparkles */
+/* Sparkle */
 .sparkle {
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(255,255,255,0.8);
+  width: 150px;
+  height: 150px;
+  background: rgba(240,142,180,0.6); /* rose sparkle */
   border-radius: 50%;
-  z-index: 0;
+  z-index: -2;
   animation: sparkleMove 10s linear infinite;
 }
 
 @keyframes sparkleMove {
-  0% { transform: translate(0,0) scale(1) rotate(0deg); opacity: 0.8; }
+  0% { transform: translate(0,0) scale(1) rotate(0deg); opacity: 0.7; }
   25% { transform: translate(30px,-20px) scale(1.1) rotate(10deg); opacity: 1; }
   50% { transform: translate(60px,-50px) scale(1.2) rotate(20deg); opacity: 0.9; }
   75% { transform: translate(30px,-30px) scale(1.1) rotate(10deg); opacity: 1; }
-  100% { transform: translate(0,0) scale(1) rotate(0deg); opacity: 0.8; }
+  100% { transform: translate(0,0) scale(1) rotate(0deg); opacity: 0.7; }
 }
 
 /* Responsive Adjustments */

@@ -1,96 +1,140 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import "../styles/services.css";
 
-const WHATSAPP_NUMBER = '96178845146' // <-- replace with your number
+const services = {
+  Facials: [
+    {
+      name: "Deep Cleansing Facial",
+      price: "$70",
+      points: [
+        "Removes impurities and dead skin",
+        "Hydration and nourishment",
+        "Radiant glowing skin"
+      ],
+    },
+    {
+      name: "Hydrating Facial",
+      price: "$65",
+      points: [
+        "Deep moisture boost",
+        "Calms dry and sensitive skin",
+        "Soft and smooth finish"
+      ],
+    },
+    {
+      name: "Anti-Aging Facial",
+      price: "$90",
+      points: [
+        "Reduces fine lines",
+        "Boosts collagen production",
+        "Firm and youthful look"
+      ],
+    },
+  ],
+  "Glow Skin Treatment": [
+    {
+      name: "Vitamin C Glow",
+      price: "$80",
+      points: ["Brightens complexion", "Antioxidant protection", "Natural radiance"],
+    },
+    {
+      name: "Brightening Facial",
+      price: "$85",
+      points: ["Evens skin tone", "Removes dullness", "Healthy glow"],
+    },
+  ],
+  "Microneedling & Peels": [
+    {
+      name: "Microneedling",
+      price: "$120",
+      points: ["Stimulates collagen", "Reduces scars", "Smooth skin texture"],
+    },
+    {
+      name: "Chemical Peel",
+      price: "$110",
+      points: ["Exfoliates dead skin", "Brightens skin", "Refines pores"],
+    },
+  ],
+  BundleNew: [
+    {
+      name: "Facial + Glow Treatment",
+      price: "$140",
+      points: ["Combination of deep cleansing", "Hydration and glow", "Radiant skin"],
+    },
+    {
+      name: "Peel + Microneedling",
+      price: "$200",
+      points: ["Advanced treatment", "Skin rejuvenation", "Youthful appearance"],
+    },
+  ],
+};
 
-const SERVICES = [
-  {
-    id: 1,
-    name: 'Deep Cleansing Facial',
-    price: 35,
-    image: 'https://images.unsplash.com/photo-1544213456-b5e9f3f2c9c1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1e3b0bf6f4d2a3b0fdfc1f90e3f5a2b1',
-    colors: ['Natural', 'Rose']
-  },
-  {
-    id: 2,
-    name: 'Hydrating Glow',
-    price: 45,
-    image: 'https://images.unsplash.com/photo-1588776814546-1f5b8f7f6ecb?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9a9c8d8a3f4d7f6e0e2b8a6f0f7d9c3d',
-    colors: ['Pearl', 'Pink']
-  },
-  {
-    id: 3,
-    name: 'Anti-Aging Treatment',
-    price: 60,
-    image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=ad5e4f9b8c3c5aaba1d2d6a2b8d5f6b7',
-    colors: ['Gold', 'Beige']
-  }
-]
+const WHATSAPP_NUMBER = "96178845146";
 
-export default function Services() {
+export default function TabbedServices() {
+  const [activeTab, setActiveTab] = useState("Facials");
+  const [currentPackage, setCurrentPackage] = useState(0);
 
-  const openWhatsAppOrder = ({ serviceName, color, qty, price }) => {
-    const text = `Hello! I'd like to book: ${serviceName}%0AColor: ${color}%0AQuantity: ${qty}%0ATotal: $${(price * qty).toFixed(2)}%0APlease share available slots.`
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`
-    window.open(url, '_blank')
-  }
 
   return (
-    <section id="services" className="services-section">
-      <div className="container">
-        <h2 className="section-title">Our Skincare Services</h2>
-        <div className="services-grid">
-          {SERVICES.map(s => (
-            <ServiceCard key={s.id} service={s} onOrder={openWhatsAppOrder} />
-          ))}
-        </div>
-      </div>
+    <section className="tabbed-services-section">
+      <h2 className="tabbed-services-header">Our Treatments & Packages</h2>
 
-      <div id="booking" style={{ marginTop: '40px' }} className="booking-anchor" />
-    </section>
-  )
-}
-
-function ServiceCard({ service, onOrder }) {
-  const [color, setColor] = useState(service.colors[0])
-  const [qty, setQty] = useState(1)
-
-  return (
-    <div className="card">
-      <img className="card-img" src={service.image} alt={service.name} />
-      <div className="card-body">
-        <h3 className="card-title">{service.name}</h3>
-        <p className="card-price">${service.price.toFixed(2)}</p>
-
-        <div className="controls">
-          <div className="colors">
-            {service.colors.map(c => (
-              <button
-                key={c}
-                className={`swatch ${c === color ? 'active' : ''}`}
-                onClick={() => setColor(c)}
-                type="button"
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-
-          <div className="qty">
-            <button onClick={() => setQty(q => Math.max(1, q - 1))} type="button">−</button>
-            <span>{qty}</span>
-            <button onClick={() => setQty(q => q + 1)} type="button">+</button>
-          </div>
-        </div>
-
-        <div className="card-actions">
+      {/* Tabs */}
+      <div className="service-tabs">
+        {Object.keys(services).map((category) => (
           <button
-            className="btn primary full"
-            onClick={() => onOrder({ serviceName: service.name, color, qty, price: service.price })}
+            key={category}
+            className={`service-tab ${activeTab === category ? "active" : ""}`}
+            onClick={() => setActiveTab(category)}
           >
-            Order Now
+            {category}
           </button>
-        </div>
+        ))}
       </div>
-    </div>
-  )
+
+      {/* Packages */}
+      <div className="service-packages">
+        {services[activeTab].map((pkg, idx) => {
+          const message = encodeURIComponent(
+            `Hello! I want to book the "${pkg.name}" package under "${activeTab}"`
+          );
+          return (
+            <div className="package-card" key={idx}>
+              <h3 className="package-name">{pkg.name}</h3>
+              <p className="package-price">{pkg.price}</p>
+
+              <ul className="package-points">
+                {pkg.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="package-book-btn"
+              >
+                📲 Book Now
+              </a>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Mobile Dots */}
+{/* Mobile Dots for Packages */}
+{/* <div className="mobile-dots">
+  {services[activeTab].map((pkg, idx) => (
+    <span
+      key={idx}
+      className={`dot ${currentPackage === idx ? "active" : ""}`}
+      onClick={() => setCurrentPackage(idx)}
+    ></span>
+  ))}
+</div> */}
+
+    </section>
+  );
 }
