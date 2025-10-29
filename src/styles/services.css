@@ -143,7 +143,7 @@
 }
 
 /* Mobile Dots */
-/* .mobile-dots {
+.mobile-dots {
   display: none;
   justify-content: center;
   gap: 10px;
@@ -162,7 +162,7 @@
 .mobile-dots .dot.active {
   background: linear-gradient(135deg, #f08eb4, #b7c8f8);
   box-shadow: 0 0 6px rgba(240,142,180,0.4);
-} */
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -176,7 +176,7 @@
     max-width: 320px;
   }
 
-  /* .mobile-dots {
+  .mobile-dots {
     display: flex;
-  } */
+  }
 }

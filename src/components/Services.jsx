@@ -125,7 +125,7 @@ export default function TabbedServices() {
 
       {/* Mobile Dots */}
 {/* Mobile Dots for Packages */}
-{/* <div className="mobile-dots">
+<div className="mobile-dots">
   {services[activeTab].map((pkg, idx) => (
     <span
       key={idx}
@@ -133,7 +133,7 @@ export default function TabbedServices() {
       onClick={() => setCurrentPackage(idx)}
     ></span>
   ))}
-</div> */}
+</div>
 
     </section>
   );
