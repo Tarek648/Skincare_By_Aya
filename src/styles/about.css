@@ -5,7 +5,7 @@
 .about {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #fff0f3, #fffafc); /* soft blush-white */
+background: linear-gradient(135deg, #faf5f7, #fefbfc);
   padding: 5%;
   display: flex;
   justify-content: center;
@@ -182,7 +182,7 @@
 .stat h3 {
   font-size: 2.4rem;
   background: linear-gradient(90deg, #f08eb4, #b7c8f8, #fcb1c6);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.4rem;
   font-weight: 800;

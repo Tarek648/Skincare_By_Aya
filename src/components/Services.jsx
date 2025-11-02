@@ -1,140 +1,66 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/services.css";
 
-const services = {
-  Facials: [
-    {
-      name: "Deep Cleansing Facial",
-      price: "$70",
-      points: [
-        "Removes impurities and dead skin",
-        "Hydration and nourishment",
-        "Radiant glowing skin"
-      ],
-    },
-    {
-      name: "Hydrating Facial",
-      price: "$65",
-      points: [
-        "Deep moisture boost",
-        "Calms dry and sensitive skin",
-        "Soft and smooth finish"
-      ],
-    },
-    {
-      name: "Anti-Aging Facial",
-      price: "$90",
-      points: [
-        "Reduces fine lines",
-        "Boosts collagen production",
-        "Firm and youthful look"
-      ],
-    },
-  ],
-  "Glow Skin Treatment": [
-    {
-      name: "Vitamin C Glow",
-      price: "$80",
-      points: ["Brightens complexion", "Antioxidant protection", "Natural radiance"],
-    },
-    {
-      name: "Brightening Facial",
-      price: "$85",
-      points: ["Evens skin tone", "Removes dullness", "Healthy glow"],
-    },
-  ],
-  "Microneedling & Peels": [
-    {
-      name: "Microneedling",
-      price: "$120",
-      points: ["Stimulates collagen", "Reduces scars", "Smooth skin texture"],
-    },
-    {
-      name: "Chemical Peel",
-      price: "$110",
-      points: ["Exfoliates dead skin", "Brightens skin", "Refines pores"],
-    },
-  ],
-  BundleNew: [
-    {
-      name: "Facial + Glow Treatment",
-      price: "$140",
-      points: ["Combination of deep cleansing", "Hydration and glow", "Radiant skin"],
-    },
-    {
-      name: "Peel + Microneedling",
-      price: "$200",
-      points: ["Advanced treatment", "Skin rejuvenation", "Youthful appearance"],
-    },
-  ],
-};
+const services = [
+  {
+    title: "Facials",
+    desc: "Deep cleansing and nourishing care to refresh, hydrate, and restore skin balance.",
+    icon: "💧", // water drop
+    color: "#f08eb4",
+  },
+  {
+    title: "Glow Skin Treatment",
+    desc: "Brightening therapy that boosts hydration, evens tone, and enhances natural radiance.",
+    icon: "✨", // sparkle
+    color: "#b7c8f8",
+  },
+  {
+    title: "Microneedling",
+    desc: "Collagen-boosting treatment that reduces fine lines, scars, and uneven skin texture.",
+    icon: "🩹", // minimal needle/patch
+    color: "#f8d47b",
+  },
+  {
+    title: "Peels",
+    desc: "Exfoliating solutions that unclog pores and renew the skin’s surface.",
+    icon: "🍃", // leaf
+    color: "#f08eb4",
+  },
+  {
+    title: "Pure Algae Peel",
+    desc: "Natural peel rich in minerals that detoxifies and revitalizes without harsh chemicals.",
+    icon: "🌿", // algae/plant
+    color: "#b7c8f8",
+  },
+];
 
-const WHATSAPP_NUMBER = "96178845146";
-
-export default function TabbedServices() {
-  const [activeTab, setActiveTab] = useState("Facials");
-  const [currentPackage, setCurrentPackage] = useState(0);
-
-
+const ServicesSection = () => {
   return (
-    <section className="tabbed-services-section">
-      <h2 className="tabbed-services-header">Our Treatments & Packages</h2>
-
-      {/* Tabs */}
-      <div className="service-tabs">
-        {Object.keys(services).map((category) => (
-          <button
-            key={category}
-            className={`service-tab ${activeTab === category ? "active" : ""}`}
-            onClick={() => setActiveTab(category)}
-          >
-            {category}
-          </button>
-        ))}
+    <section className="services">
+      <div className="services-header">
+        <h2>Our Skincare Services</h2>
+        <p>Glow, Heal & Transform — expert care for every skin journey</p>
       </div>
 
-      {/* Packages */}
-      <div className="service-packages">
-        {services[activeTab].map((pkg, idx) => {
-          const message = encodeURIComponent(
-            `Hello! I want to book the "${pkg.name}" package under "${activeTab}"`
-          );
-          return (
-            <div className="package-card" key={idx}>
-              <h3 className="package-name">{pkg.name}</h3>
-              <p className="package-price">{pkg.price}</p>
-
-              <ul className="package-points">
-                {pkg.points.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="package-book-btn"
+      <div className="scroll-wrapper">
+        <div className="scroll-track">
+          {[...services, ...services].map((service, index) => (
+            <div className="service-card" key={index}>
+              <div
+                className="service-icon"
+                style={{ backgroundColor: service.color }}
               >
-                📲 Book Now
-              </a>
+                <span className="icon-text">{service.icon}</span>
+                <span className="icon-shine"></span>
+              </div>
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
-
-      {/* Mobile Dots */}
-{/* Mobile Dots for Packages */}
-<div className="mobile-dots">
-  {services[activeTab].map((pkg, idx) => (
-    <span
-      key={idx}
-      className={`dot ${currentPackage === idx ? "active" : ""}`}
-      onClick={() => setCurrentPackage(idx)}
-    ></span>
-  ))}
-</div>
-
     </section>
   );
-}
+};
+
+export default ServicesSection;

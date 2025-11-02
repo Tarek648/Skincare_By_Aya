@@ -1,0 +1,183 @@
+/* ================================
+   Work Process Section
+================================= */
+.work-process {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #fff8fb, #faf5f9, #fffafc);
+  background-size: 400% 400%;
+  animation: shimmerBg 12s ease-in-out infinite;
+}
+
+/* Animated background shimmer */
+@keyframes shimmerBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating soft glows */
+.work-bg,
+.work-bg2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.work-bg {
+  top: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: rgba(240, 142, 180, 0.55);
+  animation: float1 6s ease-in-out infinite alternate;
+}
+
+.work-bg2 {
+  bottom: -100px;
+  right: -60px;
+  width: 340px;
+  height: 340px;
+  background: rgba(183, 200, 248, 0.5);
+  animation: float2 7s ease-in-out infinite alternate;
+}
+
+@keyframes float1 { from { transform: translateY(0); } to { transform: translateY(25px); } }
+@keyframes float2 { from { transform: translateY(0); } to { transform: translateY(-25px); } }
+
+/* Text styles */
+.section-label {
+  font-size: 0.9rem;
+  color: #e191b3;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.process-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 650px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+  z-index: 2;
+}
+
+/* Container for all process cards */
+.process-container {
+    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+/* Continuous floating animation for cards */
+@keyframes cardFloat {
+  0%, 100% {  box-shadow: 0 10px 30px rgba(240,142,180,0.15); }
+  50% { box-shadow: 0 15px 40px rgba(183,200,248,0.25); }
+}
+
+/* Individual card styles */
+.process-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(247,240,245,0.9));
+  border: 1px solid rgba(240,142,180,0.25);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(15px);
+  width: 300px;
+  padding: 45px 30px;
+  overflow: hidden;
+  animation: fadeUp 0.8s ease forwards, cardFloat 10s ease-in-out infinite;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Hover lift effect */
+.process-card:hover {
+  transform: translateY(-15px) scale(1.05);
+}
+
+/* Automatic shining animation */
+.process-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+  transform: skewX(-25deg);
+  animation: shineMove 6s linear infinite;
+}
+
+@keyframes shineMove {
+  0% { left: -80%; }
+  50% { left: 120%; }
+  100% { left: -80%; }
+}
+
+/* Badge number on each card */
+.process-badge {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #a8b8f7;
+  background: rgba(183, 200, 248, 0.25);
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 15px rgba(183, 200, 248, 0.25);
+}
+
+/* Card heading & text */
+.process-card h3 {
+  font-size: 1.3rem;
+  color: #2a2a2a;
+  margin-bottom: 12px;
+}
+
+.process-card p {
+  color: #777;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .process-card { width: 260px; }
+}
+
+@media (max-width: 768px) {
+  .process-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .process-card { width: 85%; }
+}

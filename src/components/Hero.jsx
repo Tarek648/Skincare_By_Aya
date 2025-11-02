@@ -25,18 +25,11 @@ export default function Hero() {
         <div className="hero-left">
           <h1>Skincare By Aya</h1>
           <p className="hero-main-text">
-            Revitalize your skin and let your natural beauty shine. Luxurious skincare sessions designed to relax, renew, and rejuvenate your glow.
-          </p>
-          <p className="hero-sub-text">
             Discover treatments that bring harmony between your skin and confidence.
           </p>
           <div className="hero-buttons">
             <a href="#services" className="btn primary">
               Explore Treatments
-            </a>
-            <a href={waLink} target="_blank" rel="noopener noreferrer" className="btn whatsapp">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-              Book Now
             </a>
           </div>
         </div>

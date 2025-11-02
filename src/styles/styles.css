@@ -10,7 +10,7 @@
   --shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-*{box-sizing:border-box; overflow-x: hidden;}
+*{box-sizing:border-box;}
 body{
   overflow-x: hidden;
   margin:0;
@@ -22,14 +22,8 @@ body{
 }
 
 /* container */
-
-
-
-
-/* Optional smooth animation */
-
-/* SERVICES */
-/* .services-section{
-  padding:36px 0 80px;
-} */
-/*  */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 20px;
+}
