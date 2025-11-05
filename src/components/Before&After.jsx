@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../styles/before&after.css"; // put the CSS below into this file
+import "../styles/before&after.css"; 
 import before1 from "../assets/BeforAfter.jpeg";
 import before2 from "../assets/BeforeAfter2.jpeg";
 
@@ -33,7 +33,6 @@ export default function SkincareBook() {
       window.removeEventListener("resize", onResize);
       window.removeEventListener("keydown", onKey);
     };
-    // eslint-disable-next-line
   }, []);
 
   const maxIndex = data.length - 1;
@@ -44,7 +43,7 @@ export default function SkincareBook() {
     setTimeout(() => {
       setSpreadIndex((s) => (s >= maxIndex ? 0 : s + 1));
       setIsFlipping(false);
-    }, 560); // match CSS timing
+    }, 560); 
   }
 
   function prev() {
@@ -56,7 +55,6 @@ export default function SkincareBook() {
     }, 560);
   }
 
-  // touch handlers: horizontal swipe for desktop/tablet, vertical for mobile
   function handleTouchStart(e) {
     if (!e.touches || e.touches.length === 0) return;
     touchStartY.current = e.touches[0].clientY;
@@ -73,14 +71,13 @@ export default function SkincareBook() {
     const absDy = Math.abs(dy);
     const absDx = Math.abs(dx);
 
-    // On mobile prefer vertical swipe (up/down) to change spread
     if (isMobileView && absDy > 40 && absDy > absDx) {
-      if (dy < 0) next(); // swipe up -> next
-      else prev(); // swipe down -> prev
+      if (dy < 0) next(); 
+      else prev(); 
     } else if (!isMobileView && absDx > 40 && absDx > absDy) {
-      // desktop / wide: horizontal swipe
-      if (dx < 0) next(); // swipe left
-      else prev(); // swipe right
+      
+      if (dx < 0) next(); 
+      else prev(); 
     }
     touchStartY.current = null;
     touchStartX.current = null;
@@ -94,6 +91,7 @@ export default function SkincareBook() {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       aria-label="Skincare transformations book"
+      id="book"
     >
       <div className="book-header">
         <h2>Real Transformations, Real Confidence</h2>
@@ -101,11 +99,9 @@ export default function SkincareBook() {
       </div>
 
       <div className="book-wrap">
-        {/* visible book cover edge (left) */}
-        <div className="book-cover-left" />
+                <div className="book-cover-left" />
 
-        {/* Spread (desktop: two-page open) */}
-        {!isMobileView && (
+                {!isMobileView && (
           <div className="book-spread">
             <div className="page left-page">
               <div className="page-inner">
@@ -137,8 +133,7 @@ export default function SkincareBook() {
           </div>
         )}
 
-        {/* Mobile: show before & after artistically side-by-side on one card, but allow vertical swipe to change */}
-        {isMobileView && (
+                {isMobileView && (
           <div className="mobile-card" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
             <div className="mobile-split">
               <div className="mobile-half">
@@ -166,12 +161,10 @@ export default function SkincareBook() {
           </div>
         )}
 
-        {/* visible book cover edge (right) */}
-        <div className="book-cover-right" />
+                <div className="book-cover-right" />
       </div>
 
-      {/* Controls placed below, easy to reach on mobile */}
-      <div className="book-controls">
+            <div className="book-controls">
         <button className="btn prev" onClick={prev} aria-label="Previous spread">← Prev</button>
 
         <div className="progress">

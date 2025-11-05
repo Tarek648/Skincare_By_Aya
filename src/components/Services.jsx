@@ -5,31 +5,31 @@ const services = [
   {
     title: "Facials",
     desc: "Deep cleansing and nourishing care to refresh, hydrate, and restore skin balance.",
-    icon: "💧", // water drop
+    icon: "💧", 
     color: "#f08eb4",
   },
   {
     title: "Glow Skin Treatment",
     desc: "Brightening therapy that boosts hydration, evens tone, and enhances natural radiance.",
-    icon: "✨", // sparkle
+    icon: "✨", 
     color: "#b7c8f8",
   },
   {
     title: "Microneedling",
     desc: "Collagen-boosting treatment that reduces fine lines, scars, and uneven skin texture.",
-    icon: "🩹", // minimal needle/patch
+    icon: "🩹", 
     color: "#f8d47b",
   },
   {
     title: "Peels",
     desc: "Exfoliating solutions that unclog pores and renew the skin’s surface.",
-    icon: "🍃", // leaf
+    icon: "🍃", 
     color: "#f08eb4",
   },
   {
     title: "Pure Algae Peel",
     desc: "Natural peel rich in minerals that detoxifies and revitalizes without harsh chemicals.",
-    icon: "🌿", // algae/plant
+    icon: "🌿", 
     color: "#b7c8f8",
   },
 ];

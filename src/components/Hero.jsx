@@ -9,18 +9,10 @@ export default function Hero() {
   )}`
 
   return (
-    <section className="hero">
-      {/* Background Image */}
+    <section className="hero" id='home'>
       <div className="hero-bg-image"></div>
 
-      {/* Moving Wavy Layer */}
       <div className="wavy-bg"></div>
-
-      {/* Floating Sparkles */}
-      {/* <div className="sparkle" style={{ top: '20%', left: '15%' }}></div>
-      <div className="sparkle" style={{ top: '50%', left: '80%' }}></div>
-      <div className="sparkle" style={{ top: '70%', left: '40%' }}></div> */}
-      {/* Hero Text Content */}
       <div className="hero-content">
         <div className="hero-left">
           <h1>Skincare By Aya</h1>

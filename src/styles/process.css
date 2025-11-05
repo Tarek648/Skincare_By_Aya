@@ -14,14 +14,14 @@
   animation: shimmerBg 12s ease-in-out infinite;
 }
 
-/* Animated background shimmer */
+
 @keyframes shimmerBg {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Floating soft glows */
+
 .work-bg,
 .work-bg2 {
   position: absolute;
@@ -52,7 +52,7 @@
 @keyframes float1 { from { transform: translateY(0); } to { transform: translateY(25px); } }
 @keyframes float2 { from { transform: translateY(0); } to { transform: translateY(-25px); } }
 
-/* Text styles */
+
 .section-label {
   font-size: 0.9rem;
   color: #e191b3;
@@ -79,7 +79,7 @@
   z-index: 2;
 }
 
-/* Container for all process cards */
+
 .process-container {
     overflow: hidden;
   display: flex;
@@ -90,13 +90,13 @@
   position: relative;
 }
 
-/* Continuous floating animation for cards */
+
 @keyframes cardFloat {
   0%, 100% {  box-shadow: 0 10px 30px rgba(240,142,180,0.15); }
   50% { box-shadow: 0 15px 40px rgba(183,200,248,0.25); }
 }
 
-/* Individual card styles */
+
 .process-card {
   position: relative;
   background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(247,240,245,0.9));
@@ -113,12 +113,12 @@
   transition: all 0.4s ease;
 }
 
-/* Hover lift effect */
+
 .process-card:hover {
   transform: translateY(-15px) scale(1.05);
 }
 
-/* Automatic shining animation */
+
 .process-card::before {
   content: "";
   position: absolute;
@@ -137,7 +137,7 @@
   100% { left: -80%; }
 }
 
-/* Badge number on each card */
+
 .process-badge {
   font-size: 2rem;
   font-weight: 800;
@@ -150,7 +150,7 @@
   box-shadow: 0 0 15px rgba(183, 200, 248, 0.25);
 }
 
-/* Card heading & text */
+
 .process-card h3 {
   font-size: 1.3rem;
   color: #2a2a2a;
@@ -163,13 +163,13 @@
   line-height: 1.6;
 }
 
-/* Fade-in animation */
+
 @keyframes fadeUp {
   0% { transform: translateY(30px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 1024px) {
   .process-card { width: 260px; }
 }

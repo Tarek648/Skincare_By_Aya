@@ -1,7 +1,7 @@
 :root{
-  --bg: #faf9f6;        /* off-white */
-  --pink: #f8c8dc;      /* baby pink */
-  --rose: #f6a5c0;      /* soft rose */
+  --bg: #faf9f6;        
+  --pink: #f8c8dc;      
+  --rose: #f6a5c0;      
   --text: #333333;
   --muted: #e0e0e0;
   --whatsapp: #25d366;
@@ -10,7 +10,7 @@
   --shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-*{box-sizing:border-box;}
+*{box-sizing:border-box; scroll-behavior: smooth;}
 body{
   overflow-x: hidden;
   margin:0;
@@ -21,7 +21,7 @@ body{
   line-height:1.45;
 }
 
-/* container */
+
 .container{
   max-width:var(--container);
   margin:0 auto;

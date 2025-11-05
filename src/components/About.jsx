@@ -6,22 +6,18 @@ export default function About() {
 <section className="about" id="about">
   <div className="about-container">
     <div className="about-text">
-      {/* Section Header */}
-      <h2 className="about-section-header">About Me</h2>
+            <h2 className="about-section-header">About Me</h2>
 
-      {/* Main Statement */}
-      <h3 className="about-main-title">Your Journey to Radiant Skin</h3>
+            <h3 className="about-main-title">Your Journey to Radiant Skin</h3>
 
-      {/* Subheading / Description */}
-      <p className="about-subtitle">
+            <p className="about-subtitle">
         I help you achieve natural beauty through science-backed treatments and personalized care.
       </p>
 
-      {/* Full Description */}
+
       <p className="about-description">
 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptas illo mollitia, provident dolorum quod officia. Magnam nam pariatur expedita dolorem sed, tenetur reiciendis sunt dolorum quasi a autem rem!      </p>
 
-      {/* Stats */}
       <div className="about-stats">
         <div className="stat">
           <div className="stat-content">

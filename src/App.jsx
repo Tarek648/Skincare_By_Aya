@@ -7,6 +7,7 @@ import About from './components/About'
 import Process from './components/process'
 import Pricing from './components/Pricing'
 import BeforeAfter from './components/Before&After'
+import Location from './components/Location'
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
         <Process />
         <Services />
         <BeforeAfter />
+        <Location />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

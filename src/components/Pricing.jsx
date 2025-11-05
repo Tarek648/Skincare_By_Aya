@@ -37,7 +37,7 @@ export default function TabbedServices() {
   const packagesRef = useRef(null);
 
   const handleDotClick = (index) => {
-    const cardWidth = packagesRef.current.children[0].offsetWidth + 32; // card width + gap
+    const cardWidth = packagesRef.current.children[0].offsetWidth + 32; 
     packagesRef.current.scrollTo({
       left: index * cardWidth,
       behavior: "smooth",
@@ -61,8 +61,7 @@ export default function TabbedServices() {
     <section className="tabbed-services-section">
       <h2 className="tabbed-services-header">Our Treatments & Packages</h2>
 
-      {/* Tabs */}
-      <div className="service-tabs">
+            <div className="service-tabs">
         {Object.keys(services).map((category) => (
           <button
             key={category}
@@ -74,8 +73,7 @@ export default function TabbedServices() {
         ))}
       </div>
 
-      {/* Packages */}
-      <div
+            <div
         className="service-packages"
         ref={packagesRef}
         onScroll={handleScroll}
@@ -106,8 +104,7 @@ export default function TabbedServices() {
         })}
       </div>
 
-      {/* Mobile Dots */}
-      <div className="mobile-dots">
+            <div className="mobile-dots">
         {services[activeTab].map((_, index) => (
           <span
             key={index}

@@ -7,24 +7,24 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: #fffafc; /* soft white for text */
+  color: #fffafc; 
 }
 
-/* Background Image */
+
 .hero-bg-image {
   position: absolute;
   inset: 0;
   width: 100vw;
   height: 100vh;
   background: url('../assets/skincare.jpg') center/cover no-repeat;
-  filter: brightness(0.6); /* slightly darker for readability */
+  filter: brightness(0.6); 
   z-index: -3;
 }
 
-/* Wavy Moving Layer */
+
 .wavy-bg {
   position: absolute;
-  top: 0;
+  top: 30px;
   left: 0;
   width: 200%;
   height: 30vh;
@@ -34,7 +34,7 @@
   animation: moveWaves 10s linear infinite;
 }
 
-/* Hero Content */
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -44,11 +44,11 @@
   padding: 0 20px;
 }
 
-/* Hero Left */
+
 .hero-left h1 {
   font-size: 60px;
   font-weight: 900;
-  color: #f08eb4; /* rose glow */
+  color: #f08eb4; 
   margin-bottom: 20px;
   letter-spacing: 1px;
   text-shadow: 
@@ -61,18 +61,18 @@
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 15px;
-  color: #b7c8f8; /* lavender-blue subtitle */
+  color: #b7c8f8; 
   text-shadow: 0 0 6px rgba(183,200,248,0.4);
 }
 
 .hero-left .hero-sub-text {
   font-size: 16px;
   margin-bottom: 25px;
-  color: #fffafc; /* soft white */
+  color: #fffafc; 
   text-shadow: 0 0 5px rgba(255,255,255,0.4);
 }
 
-/* Buttons */
+
 .hero-buttons {
   display: flex;
   gap: 15px;
@@ -93,7 +93,7 @@
 }
 
 .btn.primary {
-  background: linear-gradient(135deg, #f08eb4, #b7c8f8); /* rose to lavender gradient */
+  background: linear-gradient(135deg, #f08eb4, #b7c8f8); 
   color: #fffafc;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .btn.whatsapp {
-  background: linear-gradient(135deg, #22c55e, #7ee787); /* green accent for WhatsApp */
+  background: linear-gradient(135deg, #22c55e, #7ee787); 
   color: #fffafc;
 }
 
@@ -112,12 +112,12 @@
   height: 20px;
 }
 
-/* Sparkle */
+
 .sparkle {
   position: absolute;
   width: 150px;
   height: 150px;
-  background: rgba(240,142,180,0.6); /* rose sparkle */
+  background: rgba(240,142,180,0.6); 
   border-radius: 50%;
   z-index: -2;
   animation: sparkleMove 10s linear infinite;
@@ -131,7 +131,7 @@
   100% { transform: translate(0,0) scale(1) rotate(0deg); opacity: 0.7; }
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 1024px) {
   .hero-left h1 { font-size: 48px; }
   .hero-left .hero-main-text { font-size: 16px; }

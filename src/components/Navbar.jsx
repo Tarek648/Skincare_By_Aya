@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/navbar.css'; // Make sure to import your CSS
+import '../styles/navbar.css'; 
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,8 +9,7 @@ export default function Navbar() {
       <div className="nav-container">
         <div className="brand">Glow Beauty Studio</div>
 
-        {/* Hamburger Button */}
-        <div
+                <div
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -19,8 +18,7 @@ export default function Navbar() {
           <div></div>
         </div>
 
-        {/* Nav Links */}
-        <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+                <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
           <a href="#booking" onClick={() => setMenuOpen(false)}>Booking</a>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>

@@ -26,7 +26,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   left: -60px;
   width: 250px;
   height: 250px;
-  background: rgba(240, 142, 180, 0.45); /* rose glow */
+  background: rgba(240, 142, 180, 0.45); 
   animation: float1 6s ease-in-out infinite alternate;
 }
 
@@ -35,14 +35,14 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   right: -60px;
   width: 320px;
   height: 320px;
-  background: rgba(183, 200, 248, 0.35); /* lavender-blue glow */
+  background: rgba(183, 200, 248, 0.35); 
   animation: float2 7s ease-in-out infinite alternate;
 }
 
 @keyframes float1 { from { transform: translateY(0px); } to { transform: translateY(20px); } }
 @keyframes float2 { from { transform: translateY(0px); } to { transform: translateY(-20px); } }
 
-/* Content layout */
+
 .about-container {
   position: relative;
   z-index: 1;
@@ -63,7 +63,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
 
 .about-section-header {
   font-size: 1.2rem;
-  color: #b7c8f8; /* lavender-blue */
+  color: #b7c8f8; 
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 800;
@@ -78,7 +78,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   text-shadow: 0 0 6px rgba(183, 200, 248, 0.6), 0 0 12px rgba(240, 142, 180, 0.4);
 }
 
-/* Decorative lines on sides */
+
 .about-section-header::before,
 .about-section-header::after {
   content: "";
@@ -99,24 +99,24 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
 }
 
 
-/* Main Title */
+
 .about-main-title {
   font-size: 2.8rem;
-  color: #f08eb4; /* glowing rose */
+  color: #f08eb4; 
   font-weight: 700;
   text-shadow: 0 0 12px rgba(240,142,180,0.8);
 }
 
-/* Subtitle */
+
 .about-subtitle {
   font-size: 1.3rem;
-  color: #5b7bb5; /* soft blue */
+  color: #5b7bb5; 
   margin-bottom: 1.5rem;
   font-style: italic;
   text-shadow: 0 0 6px rgba(183,200,248,0.5);
 }
 
-/* Full Description */
+
 .about-description {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -206,7 +206,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
    RESPONSIVE DESIGN
 ============================= */
 
-/* Tablets (up to 992px) */
+
 @media (max-width: 992px) {
   .about { padding: 80px 6%; }
   .about-main-title { font-size: 2.4rem; }
@@ -215,7 +215,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   .stat { padding: 30px 35px; }
 }
 
-/* Mobile (up to 768px) */
+
 @media (max-width: 768px) {
   .about { padding: 70px 5%; }
   .about-container { flex-direction: column; }
@@ -228,7 +228,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   .stat h3 { font-size: 1.9rem; }
 }
 
-/* Small phones (up to 480px) */
+
 @media (max-width: 480px) {
   .about { padding: 60px 4%; }
   .about-main-title { font-size: 1.7rem; }

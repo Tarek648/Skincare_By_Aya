@@ -21,7 +21,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   right: -60px;
   width: 250px;
   height: 250px;
-  background: rgba(183, 200, 248, 0.35); /* lavender-blue glow */
+  background: rgba(183, 200, 248, 0.35); 
   animation: float1 6s ease-in-out infinite alternate;
 }
 
@@ -30,7 +30,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   left: -60px;
   width: 320px;
   height: 320px;
-    background: rgba(240, 142, 180, 0.45); /* rose glow */
+    background: rgba(240, 142, 180, 0.45); 
   animation: float2 7s ease-in-out infinite alternate;
 }
 
@@ -42,7 +42,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
 .tabbed-services-header {
   font-size: 2rem;
   font-weight: 700;
-  color: #f08eb4; /* rose */
+  color: #f08eb4; 
   text-transform: uppercase;
   margin-bottom: 3rem;
   display: inline-block;
@@ -53,7 +53,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   text-shadow: 0 0 6px rgba(183, 200, 248, 0.6), 0 0 12px rgba(240, 142, 180, 0.4);
 }
 
-/* Tabs */
+
 .service-tabs {
   display: flex;
   justify-content: center;
@@ -85,14 +85,14 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   box-shadow: 0 10px 25px rgba(240,142,180,0.3), 0 0 15px rgba(183,200,248,0.25);
 }
 
-/* Packages */
+
 .service-packages {
   display: flex;
-  justify-content: center; /* aligned left */
+  justify-content: center; 
   gap: 2rem;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 1rem 2rem; /* extra space on sides */
+  padding: 1rem 2rem; 
 }
 
 .package-card {
@@ -106,7 +106,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   backdrop-filter: blur(8px);
   position: relative;
   flex-shrink: 0;
-  scroll-snap-align: start; /* optional if you want snapping later */
+  scroll-snap-align: start; 
 }
 
 .package-card:hover {
@@ -164,7 +164,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   }
 }
 
-/* WhatsApp button */
+
 .package-book-btn {
   display: inline-block;
   background: linear-gradient(135deg, #f08eb4, #b7c8f8);
@@ -186,7 +186,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   box-shadow: 0 6px 15px rgba(240,142,180,0.3), 0 0 10px rgba(183,200,248,0.2);
 }
 
-/* Mobile Dots */
+
 .mobile-dots {
   display: none;
   justify-content: center;
@@ -208,7 +208,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   box-shadow: 0 0 6px rgba(240,142,180,0.4);
 }
 
-/* Scrollbar hidden for professional look */
+
 .service-packages::-webkit-scrollbar {
   display: none;
 }
@@ -217,7 +217,7 @@ background: linear-gradient(135deg, #faf5f7, #fefbfc);
   scrollbar-width: none;
 }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
   .package-card {
     min-width: 360px;
